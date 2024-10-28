@@ -1,0 +1,131 @@
+from PySide6.QtWidgets import (QApplication, QMainWindow, QLabel, QLineEdit, QVBoxLayout, QWidget, QPushButton)
+from PySide6.QtGui import QPixmap
+from PySide6.QtCore import Qt
+import sys
+import os  # Import os for file path operations like checking if an image file exists
+
+# Define the main window class inheriting from QMainWindow
+class MainWindow(QMainWindow):
+    def __init__(self):
+        # Initialize the parent class (QMainWindow)
+        super().__init__()
+        
+        # Set the title of the window
+        self.setWindowTitle("Stylish App")
+        
+        # Set the window size and position (x, y, width, height)
+        self.setGeometry(200, 200, 600, 400)
+        
+        # Initialize a variable to store user input
+        self.mytext = ''
+
+        # Create a QLabel widget for displaying an image
+        self.image_label = QLabel()
+        
+        # Set the path to the image file
+        image_path = r"C:\Users\amira\Downloads\gear5.png"  # Use raw string (r"") for Windows paths to avoid escape characters
+        
+        # Check if the image file exists at the specified path
+        if os.path.exists(image_path):
+            print("Image found!")  # Print a confirmation if the image is found
+        else:
+            print("Image not found!")  # Warn if the image isn't found
+        
+        # Create a QPixmap object to load the image from the file
+        pixmap = QPixmap(image_path)
+        
+        # Check if the pixmap loaded the image correctly (non-null pixmap means success)
+        if pixmap.isNull():
+            print("Failed to load the image.")  # Error message if the image couldn't be loaded
+        else:
+            print("Image loaded successfully.")  # Confirmation if the image is successfully loaded
+        
+        # Set the loaded pixmap (image) into the QLabel
+        self.image_label.setPixmap(pixmap)
+        
+        # Ensure the image scales to fit the QLabel dimensions
+        self.image_label.setScaledContents(True)
+        
+        # Set a fixed size for the QLabel (you can adjust this to match your image dimensions)
+        # You can comment this out if you prefer the QLabel to automatically adjust to the image size
+        self.image_label.setFixedSize(300, 200)
+        
+        # Force the QLabel to repaint itself to make sure the image is rendered properly
+        self.image_label.repaint()
+
+        # Create a QLabel for displaying the text input feedback
+        self.label = QLabel("Your input will appear here")
+        
+        # Set some CSS-like styles for the text label (font size, color)
+        self.label.setStyleSheet("font-size: 20px; color: #333;")
+        
+        # Create a QLineEdit widget for user text input
+        self.input = QLineEdit()
+        
+        # Set a placeholder text for the QLineEdit to indicate what the user should do
+        self.input.setPlaceholderText("Enter some text...")
+        
+        # Style the QLineEdit to make it visually appealing
+        self.input.setStyleSheet("font-size: 18px; padding: 5px;")
+        
+        # Create a QPushButton that will trigger an action when clicked
+        self.button = QPushButton("Submit")
+        
+        # Style the button (background color, text color, font size, and padding)
+        self.button.setStyleSheet("background-color: #5cb85c; color: white; font-size: 18px; padding: 10px;")
+
+        # Connect the QLineEdit's textChanged signal to a custom function that will update the label dynamically
+        self.input.textChanged.connect(self.myfunc)
+        
+        # Connect the QPushButton's clicked signal to a custom function that will update the label with submitted text
+        self.button.clicked.connect(self.button1)
+
+        # Set up the layout using QVBoxLayout to stack widgets vertically
+        layout = QVBoxLayout()
+        
+        # Add the image label to the layout and center it horizontally
+        layout.addWidget(self.image_label, alignment=Qt.AlignCenter)
+        
+        # Add the text input field (QLineEdit)
+        layout.addWidget(self.input)
+        
+        # Add the label that will display user input and center it
+        layout.addWidget(self.label, alignment=Qt.AlignCenter)
+        
+        # Add the button and center it
+        layout.addWidget(self.button, alignment=Qt.AlignCenter)
+
+        # Create a QWidget to act as a container for the layout
+        container = QWidget()
+        
+        # Set the layout for the container
+        container.setLayout(layout)
+
+        # Set the container as the central widget for the main window
+        self.setCentralWidget(container)
+
+    # Define a custom function to handle the textChanged signal from QLineEdit
+    def myfunc(self, text):
+        # Update the mytext variable with the current text in the input field
+        self.mytext = text
+        
+        # Set the label's text to reflect what the user is typing
+        self.label.setText(text)
+    
+    # Define a custom function to handle the button click event
+    def button1(self, checked):
+        # Update the label with the final submitted text when the button is clicked
+        self.label.setText(f"You submitted: {self.mytext}")
+
+# Entry point for the application
+# Create an instance of QApplication which is required for any PySide6 application
+app = QApplication(sys.argv)
+
+# Create an instance of MainWindow, which is our custom window class
+window = MainWindow()
+
+# Show the window on the screen
+window.show()
+
+# Start the application's event loop, waiting for user interactions (clicks, typing, etc.)
+app.exec()

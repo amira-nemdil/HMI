@@ -1,0 +1,36 @@
+import sys
+from PySide6.QtWidgets import QApplication, QWidget, QMainWindow, QLabel, QPushButton
+from PySide6.QtCore import QSize
+
+class Mainwindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("My app")
+        self.button_is_checked= True
+        self.button = QPushButton("Submit")
+        self.button.setCheckable(True)
+        self.button.clicked.connect(self.button_ck)
+        self.button.clicked.connect(self.button_st)
+
+        self.setFixedSize(QSize(400, 300))
+        self.setCentralWidget(self.button)
+    def button_ck(self):
+        self.button.setText("You ")
+        self.button.setEnabled(False)
+        self.setWindowTitle("GOG")
+
+
+    def button_st(self, checked):
+        print('checked', checked)
+
+
+    def somme(self):
+        print(self.button_is_checked)
+
+app = QApplication([])
+window = Mainwindow()
+window.show()
+
+app.exec()
+
+#Qtwidgets , Qtcore , QT Gui
