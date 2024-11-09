@@ -1,6 +1,6 @@
 import sys
 from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QApplication, QCheckBox, QMainWindow, QSpinBox, QDoubleSpinBox,QSlider
+from PySide6.QtWidgets import QApplication, QCheckBox, QMainWindow, QSpinBox, QDoubleSpinBox
 class Mainwindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -10,9 +10,8 @@ class Mainwindow(QMainWindow):
         Widget = QDoubleSpinBox() # accepts only int values
         
         # Or: widget = QDoubleSpinBox() acceptsf loat values
-        widget = QSlider
-        Widget.setMinimum(-10)
-        Widget.setMaximum(5)
+        #Widget.setMinimum(-10)
+       # Widget.setMaximum(5)
         Widget.setRange (-10, 5)
         
         Widget.setPrefix("$")

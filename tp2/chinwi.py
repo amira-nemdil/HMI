@@ -42,7 +42,7 @@ class MainWindow(QMainWindow):
             self.setStyleSheet(file.read())
 
     def play_video(self):
-        video_file = r"E:\stickers and memes\femboy.mp4"
+        video_file = r"C:\nitro\stickers and memes\femboy.mp4"
 
         # OpenCV for video display
         cap = cv2.VideoCapture(video_file)
