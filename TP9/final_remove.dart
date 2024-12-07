@@ -10,6 +10,7 @@ void main() {
   animals.sort();
   print(animals);
 
+  // ignore: unused_local_variable
   var desserts = ['cookies', 'cupcakes', 'donuts', 'pie'];
   desserts = [];
   desserts = ['cookies', 'cupcakes', 'donuts', 'pie'];

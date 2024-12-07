@@ -1,4 +1,7 @@
+// ignore_for_file: equal_keys_in_map
+
 void main () {
+ // ignore: unused_local_variable
  final A =true;
  final treasureMap ={
   'garbage' :"'in the dumpster",

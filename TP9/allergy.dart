@@ -4,6 +4,7 @@ void main() {
   const sensitiveCandy = [
     'Junior Mints',
     'Twizzlers',
+    // ignore: dead_code
     if (!peanutAllergy) 'Resses',
   ];
   print(sensitiveCandy);
