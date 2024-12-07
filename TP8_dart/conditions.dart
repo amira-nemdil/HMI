@@ -14,11 +14,11 @@ void demoConditions() {
   }
   print("Traffic light command: $command");
 
-  const animal = 'Fox';
+  const animal = 'Adel';
   if (animal == 'Cat' || animal == 'Dog') {
     print('Animal is a house pet.');
   } else {
-    print('Animal is not a house pet.');
+    print('Animal is the perfekt fluffy cat pet.');
   }
 }
 void main() {
