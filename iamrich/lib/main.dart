@@ -15,70 +15,24 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: SafeArea(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: 170.0,
-                    height: 100.0,
-                    color: Colors.red,
-                    margin: const EdgeInsets.all(8.0),
-                    child: const Center(
-                      child: Text(
-                        'Red',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: 150.0,
-                    height: 100.0,
-                    color: Colors.green,
-                    margin: const EdgeInsets.all(8.0),
-                    child: const Center(
-                      child: Text(
-                        'Green',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
-                ],
+              CircleAvatar(
+                radius: 150.0,
+                backgroundColor: const Color.fromARGB(255, 90, 152, 70),
+                backgroundImage: NetworkImage(
+                    'https://th.bing.com/th/id/R.3c575f7ff4d54a70c2853de961578ab1?rik=1SbUT%2b8mZJ1mNQ&pid=ImgRaw&r=0'),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: double.infinity,
-                    height: double.infinity,
-                    color: Colors.blue,
-                    margin: const EdgeInsets.all(8.0),
-                    child: const Center(
-                      child: Text(
-                        'Blue',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: 100.0,
-                    height: 100.0,
-                    color: Colors.yellow,
-                    margin: const EdgeInsets.all(8.0),
-                    child: const Center(
-                      child: Text(
-                        'Yellow',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    ),
-                  ),
-                ],
+              const SizedBox(height: 5), // Add spacing
+              const Text(
+                'Moss Head',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center, // Align text center
               ),
             ],
           ),
         ),
-        backgroundColor: const Color.fromARGB(255, 10, 14, 16),
+        backgroundColor: Colors.teal, // Use Colors.teal
       ),
     );
   }
