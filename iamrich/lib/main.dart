@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    width: 125.0,
+                    width: 170.0,
                     height: 100.0,
                     color: Colors.red,
                     margin: const EdgeInsets.all(8.0),
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: 100.0,
+                    width: 150.0,
                     height: 100.0,
                     color: Colors.green,
                     margin: const EdgeInsets.all(8.0),
@@ -50,8 +50,8 @@ class MyApp extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    width: 100.0,
-                    height: 100.0,
+                    width: double.infinity,
+                    height: double.infinity,
                     color: Colors.blue,
                     margin: const EdgeInsets.all(8.0),
                     child: const Center(
