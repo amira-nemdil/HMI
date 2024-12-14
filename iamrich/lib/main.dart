@@ -26,10 +26,20 @@ class MyApp extends StatelessWidget {
               const SizedBox(height: 5), // Add spacing
               const Text(
                 'Moss Head',
-                style: TextStyle(fontSize: 25,
-                 fontWeight: FontWeight.bold,
-                 fontFamily: 'Playwrite_GB_J_Guides', 
-                  ),
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Playwrite_GB_J_Guides',
+                ),
+                textAlign: TextAlign.center, // Align text center
+              ),
+              const SizedBox(height: 5), // Add spacing
+              const Text(
+                'Google Maps Developer',
+                style: TextStyle(
+                  fontSize: 18, // Set the font size
+                  fontFamily: 'Arial', // Use Arial font
+                ),
                 textAlign: TextAlign.center, // Align text center
               ),
             ],
