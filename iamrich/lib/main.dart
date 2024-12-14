@@ -15,13 +15,13 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: SafeArea(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    width: 100.0,
+                    width: 125.0,
                     height: 100.0,
                     color: Colors.red,
                     margin: const EdgeInsets.all(8.0),
