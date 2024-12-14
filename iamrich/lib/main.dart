@@ -1,48 +1,3 @@
-//import 'package:flutter/material.dart';
-
-//void main() {
-  //runApp(MaterialApp());
-//}
-//theme: ThemeData(
-//  colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-//  useMaterial3: false,
-//
-/*debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.lightBlue,
-        appBar: AppBar(
-          backgroundColor: Colors.blueGrey[900],
-          title: const Center(
-            child: Text(
-              'I am rich',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-        ),
-        body: Center(
-          child: Image.asset('image/Diamond1.jpg'),
-        ),
-      ),
-    ),
-  );
-}*/
-//class MyApp extends StatelessWidget {
-  //const MyApp({super.key});
-
- 
-  //@override
-  //Widget build(BuildContext context) {
-    //return MaterialApp(
-     //debugShowCheckedModeBanner: false,
-      //home: Scaffold(
-        //backgroundColor: Colors.red,
-       // body: Container(),
-
-      //),
-    //);
-  //}
-//}
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -52,19 +7,75 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       home: Scaffold(
         body: SafeArea(
-          child: Container(
-            width: 100.0,
-            height: 100.0,
-            color: Colors.white,
-            margin: EdgeInsets.all(25.0),
-            child: Text('Hello'),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    width: 100.0,
+                    height: 100.0,
+                    color: Colors.red,
+                    margin: const EdgeInsets.all(8.0),
+                    child: const Center(
+                      child: Text(
+                        'Red',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 100.0,
+                    height: 100.0,
+                    color: Colors.green,
+                    margin: const EdgeInsets.all(8.0),
+                    child: const Center(
+                      child: Text(
+                        'Green',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    width: 100.0,
+                    height: 100.0,
+                    color: Colors.blue,
+                    margin: const EdgeInsets.all(8.0),
+                    child: const Center(
+                      child: Text(
+                        'Blue',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 100.0,
+                    height: 100.0,
+                    color: Colors.yellow,
+                    margin: const EdgeInsets.all(8.0),
+                    child: const Center(
+                      child: Text(
+                        'Yellow',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
         backgroundColor: const Color.fromARGB(255, 10, 14, 16),
