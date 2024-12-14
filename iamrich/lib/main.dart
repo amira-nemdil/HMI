@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
+//import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp());
-}
+//void main() {
+  //runApp(MaterialApp());
+//}
 //theme: ThemeData(
 //  colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
 //  useMaterial3: false,
@@ -26,18 +26,48 @@ void main() {
     ),
   );
 }*/
+//class MyApp extends StatelessWidget {
+  //const MyApp({super.key});
+
+ 
+  //@override
+  //Widget build(BuildContext context) {
+    //return MaterialApp(
+     //debugShowCheckedModeBanner: false,
+      //home: Scaffold(
+        //backgroundColor: Colors.red,
+       // body: Container(),
+
+      //),
+    //);
+  //}
+//}
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
- 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
       home: Scaffold(
-        backgroundColor: Colors.red,
-        body: Container(),
-
+        body: SafeArea(
+          child: Container(
+            width: 100.0,
+            height: 100.0,
+            color: Colors.white,
+            margin: EdgeInsets.all(25.0),
+            child: Text('Hello'),
+          ),
+        ),
+        backgroundColor: const Color.fromARGB(255, 10, 14, 16),
       ),
     );
   }
